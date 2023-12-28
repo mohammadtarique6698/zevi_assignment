@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import data, {Item} from "../../../Faker API/Page2ndData/Page2ndData"
+import {Item} from "../../../Faker API/Page2ndData/Page2ndData"
 
 interface FilterProps {
     data: Item[];
@@ -33,8 +33,6 @@ interface FilterProps {
       };
     
       const getPriceRange = (price: number): string => {
-        // Define your price range logic here
-        // Example: return "Under 500", "500 to 1000", etc.
         if (price < 500) return "Under 500";
         else if (price >= 500 && price < 1000) return "500 to 1000";
         else if (price >= 1000 && price < 3000) return "1000 to 3000";
@@ -45,9 +43,8 @@ interface FilterProps {
         const filteredItems = data
           .filter((item) => {
             if (brandFilters.length === 0) {
-              return true; // No brand filter selected, include all items
+              return true;
             } else {
-              // Check if the item's company is in the selected brands or is "Others"
               return (
                 brandFilters.includes(item.company_Name) ||
                 (brandFilters.includes('Others') && !['H&M', 'Mango'].includes(item.company_Name))
@@ -60,7 +57,6 @@ interface FilterProps {
           )
           .filter((item) => ratingFilters.length === 0 || ratingFilters.includes(item.rating));
       
-        // Call the onFilterChange prop with the filtered items
         onFilterChange(filteredItems);
       };
       

@@ -17,7 +17,7 @@ interface CardProps {
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
-const CustomCard: React.FC<CardProps> = ({ imageURL, pName, company, oldprice, newprice, rating, view }) => {
+const CustomCard: React.FC<CardProps> = ({ imageURL, pName, oldprice, newprice, rating, view }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 

@@ -1,7 +1,10 @@
 .container {
+    display: flex;
+    flex-direction: column;
     margin-top: 2.3rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-bottom: 6rem;
 }
 
 .container-grid {
@@ -10,4 +13,7 @@
     margin-top: 1.5rem;
     gap: 1rem;
 }
+
+
+
 
