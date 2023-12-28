@@ -1,0 +1,13 @@
+.container {
+    margin-top: 2.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
