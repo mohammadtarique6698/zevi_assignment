@@ -4,7 +4,7 @@ import Filter from "../Filter/Filter"
 import { Typography, TextField, InputAdornment } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Logo from "../../../Components/Logo/Logo"
-import data from "../../../Faker API/Page2ndData/Page2ndData"
+import data, {Item} from "../../../Faker API/Page2ndData/Page2ndData"
 import Card from "../Card/Card"
 
 interface Color {
@@ -12,6 +12,12 @@ interface Color {
 }
 
 const MainPage: React.FC<Color> = ({color}) => {
+    const [filteredData, setFilteredData] = React.useState<Item[]>(data);
+
+  const handleFilterChange = (filteredItems: Item[]) => {
+    setFilteredData(filteredItems);
+  };
+
     return (
         <div className="container">
             <TextField
@@ -32,11 +38,11 @@ const MainPage: React.FC<Color> = ({color}) => {
                 <div>
                     <Typography variant="h3">Search Results</Typography>
                     <div style={{ marginTop: "2rem", marginLeft: "1.2rem" }}>
-                        <Filter />
+                        <Filter data={data} onFilterChange={handleFilterChange}/>
                     </div>
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginTop: "1.5rem" }}>
-                {data.map((currentItem, idx) => (
+                {filteredData.map((currentItem, idx) => (
                     <Card
                     key={idx}
                     imageURL={currentItem.image_URL}

@@ -1,4 +1,4 @@
-interface Item {
+export interface Item {
     image_URL: string;
     product_Name: string;
     company_Name: string;
@@ -8,7 +8,7 @@ interface Item {
     view: number;
   }
   
-  const data: Item[] = [
+  const Data: Item[] = [
     {
       image_URL: "https://asset1.modelmanagement.com/mm-eyJ0Ijp7InIiOnsibCI6/IjYyMCIsImgiOiI0ODUi/fSwidyI6eyJ0eCI6Ik1h/a2VubmEgT2xzb25cbm1v/ZGVsbWFuYWdlbWVudC5j/b21cL21vZGVsXC9tYWtl/bm5hLW9sc29uLTIiLCJ0/eG8iOnsibCI6IjQ4NSIs/ImgiOiI0ODUifX0sIjAi/OnsidyI6eyJsZyI6IjEi/LCJsZ2giOiIxMjkiLCJs/Z2ciOiJmIn19fSwiaWQi/OiJpNTY5NTc4NSIsImYi/OiJqcGcifQ;;.jpg",
       product_Name: "Black Elegant top",
@@ -59,12 +59,12 @@ interface Item {
       product_Name: "Sleeveless Dashing Orange",
       company_Name: "Lawman",
       old_price: 1200,
-      updated_price: 999,
+      updated_price: 899,
       rating: "⭐⭐⭐",
       view: 259,
     },
   ];
   
-  export default data;
+  export default Data;
   
   
